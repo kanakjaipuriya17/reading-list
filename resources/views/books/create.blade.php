@@ -46,6 +46,15 @@
 </select>
 
         <button type="submit">Save Book</button>
+        <div>
+    <label for="notes">Notes</label>
+    <textarea
+        id="notes"
+        name="notes"
+        placeholder="Write a few notes about this book..."
+    >{{ old('notes') }}</textarea>
+</div>
+
 
         <a href="{{ route('books.index') }}" class="btn">
             Back to List
