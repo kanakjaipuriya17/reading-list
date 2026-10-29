@@ -9,11 +9,19 @@ use Illuminate\Http\Request;
 class BookController extends Controller
 {
     // Display all books and filter by status
-    public function index()
+    public function index(Request $request)
 {
-    $books = Book::all();
+    $status = $request->query('status');
 
-    return view('books.index', compact('books'));
+    $query = Book::query();
+
+    if (in_array($status, ['to-read', 'reading', 'finished'], true)) {
+        $query->where('status', $status);
+    }
+
+    $books = $query->get();
+
+    return view('books.index', compact('books', 'status'));
 }
 
     // Show the form to add a book
