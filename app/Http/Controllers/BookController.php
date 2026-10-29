@@ -3,23 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+
 use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
     // Display all books and filter by status
-    public function index(Request $request)
-    {
-        $query = Book::query();
+    public function index()
+{
+    $books = Book::all();
 
-        if ($request->filled('status')) {
-            $query->where('status', $request->status);
-        }
-
-        $books = $query->latest()->get();
-
-        return view('books.index', compact('books'));
-    }
+    return view('books.index', compact('books'));
+}
 
     // Show the form to add a book
     public function create()
