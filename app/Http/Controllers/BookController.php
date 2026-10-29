@@ -18,26 +18,22 @@ class BookController extends Controller
 
     // Show the form to add a book
     public function create()
-    {
-        return view('books.create');
-    }
+{
+    return view('books.create');
+}
 
-    // Save a new book
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'notes' => 'nullable|string',
-            'title' => 'required|string|max:255',
-            'author' => 'required|string|max:255',
-            'genre' => 'required|string|max:100',
-            'status' => 'required|in:to-read,reading,finished',
-        ]);
+public function store(Request $request)
+{
+    $validated = $request->validate([
+        'title' => 'required|string|max:255',
+        'author' => 'required|string|max:255',
+        'status' => 'required|in:to-read,reading,finished',
+    ]);
 
-        Book::create($validated);
+    Book::create($validated);
 
-        return redirect()->route('books.index')
-            ->with('success', 'Book added successfully!');
-    }
+    return redirect()->route('books.index');
+}
 
     // Show the edit form
     public function edit(Book $book)
