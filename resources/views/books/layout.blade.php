@@ -18,13 +18,8 @@
             color: #51475b;
         }
 
-        /* Header */
         header {
-            background: linear-gradient(
-                135deg,
-                #f3d9e8,
-                #e4dcf8
-            );
+            background: linear-gradient(135deg, #f3d9e8, #e4dcf8);
             padding: 28px 20px;
             border-bottom: 2px solid #eadcf0;
         }
@@ -55,12 +50,10 @@
             font-size: 42px;
         }
 
-        /* Main content */
         main {
             max-width: 1000px;
             margin: 35px auto;
             padding: 0 20px 35px;
-            min-height: 60vh;
         }
 
         h1, h2, h3 {
@@ -72,10 +65,6 @@
             margin-top: 0;
         }
 
-        h2 {
-            margin-top: 28px;
-        }
-
         p {
             line-height: 1.6;
         }
@@ -84,15 +73,7 @@
             text-decoration: none;
         }
 
-        /* Form fields */
-        label {
-            display: block;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        input,
-        select {
+        input, select {
             width: 100%;
             padding: 12px;
             border: 1px solid #e6d8ee;
@@ -103,15 +84,12 @@
             font: inherit;
         }
 
-        input:focus,
-        select:focus {
+        input:focus, select:focus {
             outline: 2px solid #d8c5ed;
             border-color: #b99bd4;
         }
 
-        /* Buttons */
-        button,
-        .btn {
+        button, .btn {
             display: inline-block;
             padding: 11px 17px;
             border: none;
@@ -124,8 +102,7 @@
             transition: background 0.2s;
         }
 
-        button:hover,
-        .btn:hover {
+        button:hover, .btn:hover {
             background: #b9a0dd;
         }
 
@@ -138,7 +115,6 @@
             background: #e9aebc;
         }
 
-        /* Success message */
         .message {
             padding: 14px 16px;
             margin-bottom: 22px;
@@ -148,7 +124,6 @@
             border: 1px solid #c5e6d1;
         }
 
-        /* Validation errors */
         .error {
             padding: 12px 16px;
             margin-bottom: 18px;
@@ -157,15 +132,13 @@
             color: #a34d5a;
         }
 
-        /* Book cards */
         .book {
             background: #fff;
             border: 1px solid #f0dfec;
             border-radius: 16px;
             padding: 22px;
             margin-top: 18px;
-            box-shadow: 0 5px 18px
-                rgba(165, 133, 178, 0.10);
+            box-shadow: 0 5px 18px rgba(165, 133, 178, 0.10);
         }
 
         .book h3 {
@@ -184,7 +157,6 @@
             margin: 0;
         }
 
-        /* Filter section */
         .filter {
             max-width: 400px;
             margin: 22px 0;
@@ -198,7 +170,6 @@
             margin-bottom: 12px;
         }
 
-        /* Empty book list */
         .empty {
             text-align: center;
             background: #fff;
@@ -208,7 +179,6 @@
             border: 1px dashed #dfcde8;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 22px 15px;
@@ -216,7 +186,6 @@
             font-size: 13px;
         }
 
-        /* Mobile-friendly design */
         @media (max-width: 600px) {
             header {
                 padding: 22px 16px;
@@ -231,10 +200,6 @@
                 font-size: 25px;
             }
 
-            .brand {
-                font-size: 23px;
-            }
-
             .book {
                 padding: 17px;
             }
@@ -243,29 +208,20 @@
 </head>
 
 <body>
-
     <header>
         <div class="header-inner">
-
             <div>
-                <div class="brand">
-                    📚 My Reading List
-                </div>
-
+                <div class="brand">📚 My Reading List</div>
                 <p class="tagline">
                     Your little corner of books & dreams 🌷
                 </p>
             </div>
 
-            <div class="header-icon">
-                🦋
-            </div>
-
+            <div class="header-icon">🦋</div>
         </div>
     </header>
 
     <main>
-
         @if (session('success'))
             <div class="message">
                 ✓ {{ session('success') }}
@@ -273,12 +229,10 @@
         @endif
 
         @yield('content')
-
     </main>
 
     <footer>
         Made with ♡ and a little bit of book magic ✨
     </footer>
-
 </body>
 </html>
